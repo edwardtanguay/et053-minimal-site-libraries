@@ -7,7 +7,8 @@
 		  content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"
 		  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
-		      <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+	<script defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<link rel="stylesheet"
 		  href="css/main.css">
 	<title>search</title>
@@ -649,7 +650,35 @@
 				<li><a href="index.html">home</a></li>
 			</ul>
 		</nav>
-		<p>test <span x-text="nouns.length"></span></p>
+		<p>With Alpine.js, you can easily build a search on, e.g. a long array of items. You have to put the whole
+			object in
+			a <code>x-data</code> attribute, then define the search text with an <code>x-model</code> attribute and
+			display
+			the matching data by going through all objects of an array with the <code>x-for</code> attribute and showing
+			those
+			that match the criteria with a <code>x-show</code> attribute.</p>
+		<p>There are <span x-text="nouns.length"></span> nouns.</p>
+
+		<section x-data="{searchText: ''}">
+			<input type="search"
+				   placeholder="search for a noun"
+				   x-model="searchText" />
+			<div class="all"
+				 x-show="searchText === ''">
+				<template x-for="noun in nouns">
+					<div x-text="noun.singular"></div>
+				</template>
+			</div>
+			<div x-show="searchText !== ''">
+				<ul>
+					<template x-for="noun in nouns">
+						<li x-show="noun.singular.toLowerCase().includes(searchText.toLowerCase())">
+							<span x-text="noun.article"></span> <span x-text="noun.singular"></span>
+						</li>
+					</template>
+				</ul>
+			</div>
+		</section>
 	</main>
 </body>
 

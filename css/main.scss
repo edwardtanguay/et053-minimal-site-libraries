@@ -11,13 +11,30 @@ nav {
 			ul {
 				li {
 					cursor: pointer;
+
 					&.active {
 						color: yellow;
+					}
+
+					&:hover {
+						animation: rubberBand;
+						animation-duration: 1s;
+						background-color: red;
 					}
 				}
 			}
 		}
+	}
 
+	.burgermenu {
+		.menuArea {
+			display: flex;
+			justify-content: flex-end;
+		}	
+		.menuItems {
+			display: flex;
+			justify-content: flex-end;
+		}	
 	}
 
 }

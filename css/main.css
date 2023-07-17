@@ -10,4 +10,17 @@ nav {
 }
 .pageSubmenu main.container nav.submenu ul li.active {
   color: yellow;
+}
+.pageSubmenu main.container nav.submenu ul li:hover {
+  animation: rubberBand;
+  animation-duration: 1s;
+  background-color: red;
+}
+.pageSubmenu .burgermenu .menuArea {
+  display: flex;
+  justify-content: flex-end;
+}
+.pageSubmenu .burgermenu .menuItems {
+  display: flex;
+  justify-content: flex-end;
 }/*# sourceMappingURL=main.css.map */

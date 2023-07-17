@@ -7,12 +7,14 @@
 		  content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"
 		  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+	<script defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<link rel="stylesheet"
 		  href="css/main.css">
 	<title>form</title>
 </head>
 
-<body>
+<body x-data="{formData: {firstName: '', lastName: '', email: ''}}">
 	<main class="container">
 		<nav>
 			<ul>
@@ -22,6 +24,43 @@
 				<li><a href="index.html">home</a></li>
 			</ul>
 		</nav>
+		<section>
+			<div class="grid">
+				<form>
+					<div class="grid">
+						<label for="firstname">
+							First name
+							<input type="text"
+								   id="firstname"
+								   x-model="formData.firstName"
+								   required>
+						</label>
+
+						<label for="lastname">
+							Last name
+							<input type="text"
+								   id="lastname"
+								   x-model="formData.lastName"
+								   required>
+						</label>
+
+					</div>
+					<label for="email">Email address</label>
+					<input type="email"
+						   id="email"
+						   x-model="formData.email"
+						   required>
+					<small>We'll never share your email with anyone else.</small>
+					<button type="submit">Submit</button>
+
+				</form>
+				<div class="dataArea">
+					<div>First name: <code x-text="formData.firstName"></code></div>
+					<div>Last name: <code x-text="formData.lastName"></code></div>
+					<div>Email: <code x-text="formData.email"></code></div>
+				</div>
+			</div>
+		</section>
 	</main>
 </body>
 

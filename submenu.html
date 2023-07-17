@@ -11,10 +11,13 @@
 			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<link rel="stylesheet"
 		  href="css/main.css">
+	<link rel="stylesheet"
+		  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 	<title>submenu</title>
 </head>
 
-<body x-data="{showMessage: false, currentPage: 'p1'}" class="pageSubmenu">
+<body x-data="{showMessage: false, currentPage: 'p1'}"
+	  class="pageSubmenu">
 	<main class="container">
 		<nav>
 			<ul>
@@ -25,6 +28,19 @@
 			</ul>
 		</nav>
 		<hr />
+		<section class="burgermenu">
+			<h2>Burger menu</h2>
+			<div class="menuArea">
+				<div @click="showMessage = !showMessage ">🍔</div>
+			</div>
+			<div class="menuItems" x-show="showMessage">
+				<ul>
+					<li><a href="form.html">form</a></li>
+					<li>222</li>
+					<li>333</li>
+				</ul>
+			</div>
+		</section>
 		<section>
 			<h2>Toggle Test</h2>
 			<button @click="showMessage = !showMessage ">toggle message</button>
@@ -35,11 +51,16 @@
 				areas of the page immediately</span>, without a server round-trip.</p>
 		<nav class="submenu">
 			<ul>
-				<li :class="currentPage === 'p1' ? 'active' : ''" @click="currentPage = 'p1'">Intro</li>
-				<li :class="currentPage === 'p2' ? 'active' : ''" @click="currentPage = 'p2'">Similar</li>
-				<li :class="currentPage === 'p3' ? 'active' : ''" @click="currentPage = 'p3'">Fast</li>
-				<li :class="currentPage === 'p4' ? 'active' : ''" @click="currentPage = 'p4'">URL</li>
-				<li :class="currentPage === 'p5' ? 'active' : ''" @click="currentPage = 'p5'">Uses</li>
+				<li :class="currentPage === 'p1' ? 'active' : ''"
+					@click="currentPage = 'p1'">Intro</li>
+				<li :class="currentPage === 'p2' ? 'active' : ''"
+					@click="currentPage = 'p2'">Similar</li>
+				<li :class="currentPage === 'p3' ? 'active' : ''"
+					@click="currentPage = 'p3'">Fast</li>
+				<li :class="currentPage === 'p4' ? 'active' : ''"
+					@click="currentPage = 'p4'">URL</li>
+				<li :class="currentPage === 'p5' ? 'active' : ''"
+					@click="currentPage = 'p5'">Uses</li>
 			</ul>
 		</nav>
 		<section x-show="currentPage === 'p1'">
