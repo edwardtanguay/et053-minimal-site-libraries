@@ -7,4 +7,7 @@ nav {
 
 .pageSubmenu main.container nav.submenu ul li {
   cursor: pointer;
+}
+.pageSubmenu main.container nav.submenu ul li.active {
+  color: yellow;
 }/*# sourceMappingURL=main.css.map */

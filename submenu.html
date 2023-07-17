@@ -35,11 +35,11 @@
 				areas of the page immediately</span>, without a server round-trip.</p>
 		<nav class="submenu">
 			<ul>
-				<li @click="currentPage = 'p1'">Intro</li>
-				<li @click="currentPage = 'p2'">Similar</li>
-				<li @click="currentPage = 'p3'">Fast</li>
-				<li @click="currentPage = 'p4'">URL</li>
-				<li @click="currentPage = 'p5'">Uses</li>
+				<li :class="currentPage === 'p1' ? 'active' : ''" @click="currentPage = 'p1'">Intro</li>
+				<li :class="currentPage === 'p2' ? 'active' : ''" @click="currentPage = 'p2'">Similar</li>
+				<li :class="currentPage === 'p3' ? 'active' : ''" @click="currentPage = 'p3'">Fast</li>
+				<li :class="currentPage === 'p4' ? 'active' : ''" @click="currentPage = 'p4'">URL</li>
+				<li :class="currentPage === 'p5' ? 'active' : ''" @click="currentPage = 'p5'">Uses</li>
 			</ul>
 		</nav>
 		<section x-show="currentPage === 'p1'">

@@ -11,6 +11,9 @@ nav {
 			ul {
 				li {
 					cursor: pointer;
+					&.active {
+						color: yellow;
+					}
 				}
 			}
 		}
