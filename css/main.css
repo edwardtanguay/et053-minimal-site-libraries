@@ -3,4 +3,8 @@ nav {
   padding-left: 2rem;
   padding-right: 2rem;
   margin-bottom: 2rem;
+}
+
+.pageSubmenu main.container nav.submenu ul li {
+  cursor: pointer;
 }/*# sourceMappingURL=main.css.map */

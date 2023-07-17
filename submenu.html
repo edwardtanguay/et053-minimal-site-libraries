@@ -7,12 +7,14 @@
 		  content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet"
 		  href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+	<script defer
+			src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 	<link rel="stylesheet"
 		  href="css/main.css">
 	<title>submenu</title>
 </head>
 
-<body>
+<body x-data="{showMessage: false, currentPage: 'p1'}" class="pageSubmenu">
 	<main class="container">
 		<nav>
 			<ul>
@@ -22,8 +24,43 @@
 				<li><a href="index.html">home</a></li>
 			</ul>
 		</nav>
+		<hr />
 		<section>
-			<p>this is the submenu page, coming next...</p>
+			<h2>Toggle Test</h2>
+			<button @click="showMessage = !showMessage ">toggle message</button>
+			<p x-show="showMessage">this is the submenu page, coming next...</p>
+		</section>
+		<hr />
+		<p>Alpine.js allows you to create simple menus which <span data-tooltip="as when using React Router">display
+				areas of the page immediately</span>, without a server round-trip.</p>
+		<nav class="submenu">
+			<ul>
+				<li @click="currentPage = 'p1'">Intro</li>
+				<li @click="currentPage = 'p2'">Similar</li>
+				<li @click="currentPage = 'p3'">Fast</li>
+				<li @click="currentPage = 'p4'">URL</li>
+				<li @click="currentPage = 'p5'">Uses</li>
+			</ul>
+		</nav>
+		<section x-show="currentPage === 'p1'">
+			<h2>Intro</h2>
+			<p>skjsdkjf dkjf dkfjd fkj</p>
+		</section>
+		<section x-show="currentPage === 'p2'">
+			<h2>Similar</h2>
+			<p>skjsdkjf dkjf dkfjd fkj</p>
+		</section>
+		<section x-show="currentPage === 'p3'">
+			<h2>Fast</h2>
+			<p>skjsdkjf dkjf dkfjd fkj</p>
+		</section>
+		<section x-show="currentPage === 'p4'">
+			<h2>URL</h2>
+			<p>skjsdkjf dkjf dkfjd fkj</p>
+		</section>
+		<section x-show="currentPage === 'p5'">
+			<h2>Uses</h2>
+			<p>skjsdkjf dkjf dkfjd fkj</p>
 		</section>
 	</main>
 </body>
